@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Coach – SafeFit AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f8fafc;
+  margin:0;
+  color:#0f172a;
+}
+nav{
+  background:#020617;
+  color:#fff;
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav a{
+  color:#38bdf8;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+.container{
+  max-width:720px;
+  margin:40px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+h2{
+  margin-top:0;
+  text-align:center;
+}
+label{
+  font-weight:600;
+  display:block;
+  margin-top:20px;
+}
+select, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border-radius:6px;
+  border:1px solid #cbd5e1;
+  font-size:15px;
+}
+button{
+  margin-top:20px;
+  background:#38bdf8;
+  color:#020617;
+  border:none;
+  padding:14px 22px;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+button:hover{
+  opacity:.9;
+}
+.result{
+  margin-top:25px;
+  background:#f1f5f9;
+  padding:18px;
+  border-radius:8px;
+}
+#whatsappUpgrade{
+  display:none;
+  margin-top:25px;
+  text-align:center;
+}
+#whatsappUpgrade button{
+  background:#22c55e;
+  color:white;
+}
+.small{
+  font-size:13px;
+  color:#64748b;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <strong>SafeFit AI</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="login.html">Login</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+
+  </div>
+</nav>
+
+<div class="container">
+  <h2>AI Fitness & Recovery Coach</h2>
+  <p class="small" style="text-align:center">
+    Write freely like WhatsApp. Hindi / Hinglish / English supported.
+  </p>
+
+  <label>Select pain area</label>
+  <select id="pain">
+    <option>Knee</option>
+    <option>Back</option>
+    <option>Shoulder</option>
+    <option>Neck</option>
+    <option>Full Body</option>
+  </select>
+
+  <label>Describe your problem</label>
+  <textarea id="problem" rows="5"
+  placeholder="Example:
+knee pain hota hai jab chalti hu
+back pain after office work
+weight zyada hai aur thakaan rehti hai"></textarea>
+
+  <button onclick="getAdvice()">Get Free AI Advice</button>
+
+  <div class="result" id="result"></div>
+
+  <div id="whatsappUpgrade">
+    <p class="small">🔒 Get a personalized recovery & fitness plan</p>
+    <a id="waLink" target="_blank">
+      <button>👉 Chat on WhatsApp (Pro)</button>
+    </a>
+  </div>
+</div>
+
+<script>
+function getAdvice(){
+
+  const pain = document.getElementById("pain").value;
+  const problem = document.getElementById("problem").value.trim();
+  const result = document.getElementById("result");
+
+  if(problem === ""){
+    alert("Please describe your problem first");
+    return;
+  }
+
+  // Free AI-style response
+  const advice =
+    "Based on your input, start with light movements, avoid pain-causing exercises, and focus on recovery. This is general guidance, not a medical plan.";
+
+  result.innerText = advice;
+
+  const message =
+    `Hi SafeFit AI,%0APain Area: ${pain}%0AProblem:%0A"${problem}"%0A%0AI want a personalized Pro fitness & recovery plan.`;
+
+  document.getElementById("waLink").href =
+    "https://wa.me/919956358504?text=" + message;
+
+  document.getElementById("whatsappUpgrade").style.display = "block";
+}
+</script>
+
+</body>
+</html>

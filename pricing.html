@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pricing – SafeFit AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#f8fafc;color:#0f172a}
+
+nav{
+  background:#020617;
+  padding:16px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+nav a{color:#38bdf8;text-decoration:none;margin-left:20px;font-weight:600}
+
+.container{
+  max-width:1100px;
+  margin:60px auto;
+  padding:20px
+}
+
+h2{text-align:center;margin-bottom:10px}
+.subtitle{text-align:center;color:#475569;margin-bottom:40px}
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  text-align:center
+}
+
+.card.pro{
+  border:3px solid #38bdf8;
+  transform:scale(1.05)
+}
+
+.price{
+  font-size:32px;
+  margin:15px 0;
+  color:#0284c7
+}
+
+ul{list-style:none;margin:20px 0}
+ul li{margin:10px 0}
+
+button{
+  padding:14px 24px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px
+}
+
+.free-btn{background:#e2e8f0}
+.pro-btn{background:#38bdf8}
+
+footer{
+  text-align:center;
+  margin:50px 0;
+  color:#64748b;
+  font-size:13px
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h3 style="color:white">SafeFit AI</h3>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="ai-coach.html">AI Coach</a>
+    <a href="login.html">Login</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Choose Your Plan</h2>
+  <p class="subtitle">Start free. Upgrade only if you need personalized care.</p>
+
+  <div class="pricing">
+
+    <!-- FREE PLAN -->
+    <div class="card">
+      <h3>Free</h3>
+      <p class="price">₹0</p>
+      <ul>
+        <li>✔ Basic AI fitness advice</li>
+        <li>✔ Hinglish / English input</li>
+        <li>✔ General exercises</li>
+        <li>❌ Personal plan</li>
+        <li>❌ Diet chart</li>
+      </ul>
+      <a href="ai-coach.html">
+<a href="https://wa.me/919956358504?text=Hi%20SafeFit%20AI%2C%20I%20want%20a%20personalized%20Pro%20Fitness%20Plan.%20My%20problem%20is%20related%20to%20pain%20and%20recovery."
+target="_blank">
+  <button class="pro-btn"> Start Free on WhatsApp</button>
+</a>
+
+      </a>
+    </div>
+
+    <!-- PRO PLAN -->
+    <div class="card pro">
+      <h3>Pro</h3>
+      <p class="price">₹299 / month</p>
+      <ul>
+        <li>✔ Personalized workout plan</li>
+        <li>✔ Injury-safe exercises</li>
+        <li>✔ Diet & recovery plan</li>
+        <li>✔ Post-surgery guidance</li>
+        <li>✔ Priority support</li>
+      </ul>
+<a href="https://wa.me/919956358504?text=Hi%20I%20want%20to%20upgrade%20to%20SafeFit%20AI%20Pro%20Plan%20₹299%20per%20month" 
+   class="btn-primary">
+      <button class="pro-btn">Upgrade to Pro</button>
+</a>
+      <p style="margin-top:10px;font-size:13px;color:#475569">
+        Cancel anytime • No hidden charges
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+⚠️ SafeFit AI provides educational guidance only. Not a medical substitute.
+</footer>
+
+</body>
+</html>
