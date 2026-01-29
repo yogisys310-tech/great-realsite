@@ -19,13 +19,65 @@ button{width:100%;padding:14px;border:none;border-radius:10px;background:#38bdf8
 .switch-text{text-align:center;margin-top:15px;font-size:14px}
 .switch-text a{color:#38bdf8;text-decoration:none;font-weight:600}
 footer{background:#020617;color:#94a3b8;text-align:center;padding:16px;margin-top:60px}
+
+  .navbar{
+  background:#020617;
+  color:#fff;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+
+.menu-icon{
+  font-size:26px;
+  cursor:pointer;
+  display:none;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+}
+
+/* MOBILE VIEW */
+@media(max-width:768px){
+  .menu-icon{display:block}
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#020617;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    padding:10px 0;
+  }
+
+  .nav-links a{
+    margin:12px 0;
+    text-align:center;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+}
+
 </style>
 </head>
 <body>
 
-<nav>
+<nav class="navbar">
   <h1>SafeFit AI</h1>
-  <div>
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="ai-coach.html">AI Coach</a>
     <a href="pricing.html">Pricing</a>
@@ -33,9 +85,9 @@ footer{background:#020617;color:#94a3b8;text-align:center;padding:16px;margin-to
     <a href="disclaimer.html">Disclaimer</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
-
   </div>
 </nav>
+
 
 <div class="container">
   <h2>Login</h2>
@@ -79,6 +131,13 @@ footer{background:#020617;color:#94a3b8;text-align:center;padding:16px;margin-to
 <footer>
   <p>© 2026 SafeFit AI • Pain-First Fitness Guidance</p>
 </footer>
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
 
+  
 </body>
 </html>
+
