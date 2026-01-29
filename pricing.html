@@ -72,20 +72,74 @@ footer{
   color:#64748b;
   font-size:13px
 }
+.navbar{
+  background:#020617;
+  color:#fff;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+
+.menu-icon{
+  font-size:26px;
+  cursor:pointer;
+  display:none;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+}
+
+/* MOBILE VIEW */
+@media(max-width:768px){
+  .menu-icon{display:block}
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#020617;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    padding:10px 0;
+  }
+
+  .nav-links a{
+    margin:12px 0;
+    text-align:center;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+}
+
+  
 </style>
 </head>
 
 <body>
 
-<nav>
-  <h3 style="color:white">SafeFit AI</h3>
-  <div>
+
+  <nav class="navbar">
+  <h1>SafeFit AI</h1>
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="ai-coach.html">AI Coach</a>
+    <a href="pricing.html">Pricing</a>
     <a href="login.html">Login</a>
+    <a href="disclaimer.html">Disclaimer</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
-
   </div>
 </nav>
 
@@ -141,6 +195,13 @@ target="_blank">
 <footer>
 ⚠️ SafeFit AI provides educational guidance only. Not a medical substitute.
 </footer>
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
 
+  
 </body>
 </html>
+
